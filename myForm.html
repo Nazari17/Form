@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nazari Form</title>
+    <style>
+        .mainForm{
+            font-family: Verdana, Helvetica, Arial, sans-serif;
+            font-size: 12pt;
+            font-style: normal;
+            color: dimgrey;
+            position: fixed;
+            height: 100%;
+            width: 40%;
+            left: 30%;
+            overflow-y: scroll;
+        }
+        .formHeader{
+            margin: 8pt;
+        }
+        .headTitle{
+            font-size: 18pt;
+            padding-bottom: 20px;
+        }
+        .headText{
+            font-size: 12pt;
+            padding-bottom: 20px;
+        }
+        .separator{
+            width: 100%;
+        }
+        .formBody{
+            margin: 8pt;
+        }
+        .formBodyTitle{
+            padding-bottom: 20px;
+        }
+        .formItem{
+            height: 20pt;
+            margin: 8pt;
+            padding-top: 5px;
+        }
+        .formLabel{
+            float: left;
+            width: 40%;
+        }
+        .formInput{
+            float: right;
+            width: 55%;
+        }
+        input[type=text] {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #404040;
+            width: 90%;
+        }
+        input[type=button]{
+            float: right;
+            width: 200px;
+            height: 75px;
+            font-size: 18pt;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius:4px;
+        }
+        .sexItem{
+            height: 81px;
+            margin: 8pt;
+            padding-top: 5px;
+        }
+        #sex label {
+            float:left;
+            width:170px;
+            margin:4px;
+            background-color:#EFEFEF;
+            border-radius:4px;
+            border:1px solid #D0D0D0;
+            overflow:auto;
+        }
+        #sex label span {
+            text-align:center;
+            font-size: 32px;
+            padding:13px 0px;
+            display:block;
+        }
+        #sex label input {
+            position:absolute;
+            top:-20px;
+        }
+
+        #sex input:checked + span {
+            height: 100%;
+            background: linear-gradient(0deg, red 15%, lightgray 15%);
+            color:#333;
+        }
+        #sex .masculine {
+            background-color:lightgrey;
+            color:#333;
+        }
+        #sex .feminine {
+            background-color:lightgrey;
+            color:#333;
+        }
+
+        .langItem{
+            height: 81px;
+            margin: 8pt;
+            padding-top: 5px;
+        }
+        #lang label {
+            float:left;
+            width:110px;
+            margin:4px;
+            background-color:#EFEFEF;
+            border-radius:4px;
+            border:1px solid #D0D0D0;
+            overflow:auto;
+        }
+        #lang label span {
+            text-align:center;
+            font-size: 32px;
+            padding:13px 0px;
+            display:block;
+        }
+        #lang label input {
+            position:absolute;
+            top:-20px;
+        }
+
+        #lang input:checked + span {
+            height: 100%;
+            background: linear-gradient(0deg, red 15%, lightgray 15%);
+            color:#333;
+        }
+
+        #lang .german {
+            background-color: lightgray;
+            color:#333;
+        }
+
+        #lang .french {
+            background-color: lightgray;
+            color:#333;
+        }
+        #lang .italian {
+            background-color: lightgray;
+            color:#333;
+        }
+        .buttonArea{
+            margin-top: 30pt;
+            padding: 8pt;
+            width: 100%;
+            height: 60pt;
+        }
+    </style>
+</head>
+<body>
+    <form name="entryForm" action="#" method="post">
+        <div class="mainForm">
+            <div class="formHeader">
+                <div class="headTitle">Profil</div>
+                <div class="headText">Hier können Sie Ihre Adress-Angaben einsehen und anpassen.</div>
+                <div class="separator">
+                    <svg height="10" width="100%">
+                        <line x1="0" y1="0" x2="800" y2="0" style="stroke:rgb(4,4,4);stroke-width:4px" />
+                    </svg>
+                </div>
+            </div>
+            <div class="formBody">
+                <div class="formBodyTitle">Persönliche Daten</div>
+                <div class="formItem">
+                    <div class="formLabel">Titel</div>
+                    <div class="formInput"><input type="text" id="title" name="title" placeholder="Dr. h.c."></div>
+                </div>
+                <div class="formItem">
+                    <div class="formLabel">Vorname</div>
+                    <div class="formInput"><input type="text" id="firstname" name="firstname" placeholder="Peter"></div>
+                </div>
+                <div class="formItem">
+                    <div class="formLabel">Nachname</div>
+                    <div class="formInput"><input type="text" id="lastname" name="lastname" placeholder="Mustermann"></div>
+                </div>
+                <div class="sexItem">
+                    <div class="formLabel">Geschlecht</div>
+                    <div class="formInput">
+                        <div id="sex">
+                            <label class="masculine"><input type="radio" name="toggle1"><span>M</span></label>
+                            <label class="feminine"><input type="radio" name="toggle1"><span>F</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="langItem">
+                    <div class="formLabel">Sprache</div>
+                    <div class="formInput">
+                        <div id="lang">
+                            <label class="german"><input type="radio" name="toggle2"><span>DE</span></label>
+                            <label class="french"><input type="radio" name="toggle2"><span>FR</span></label>
+                            <label class="italian"><input type="radio" name="toggle2"><span>IT</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="separator">
+                    <svg height="10" width="100%">
+                        <line x1="0" y1="0" x2="800" y2="0" style="stroke:rgb(4,4,4);stroke-width:4px" />
+                    </svg>
+                </div>
+                <div class="formBodyTitle">Kontaktdaten</div>
+                <div class="formItem">
+                    <div class="formLabel">Telefon</div>
+                    <div class="formInput"><input type="text" id="telephone" name="telephone" ></div>
+                </div>
+                <div class="formItem">
+                    <div class="formLabel">Mobile</div>
+                    <div class="formInput"><input type="text" id="mobile" name="mobile" placeholder="optional"></div>
+                </div>
+                <div class="formItem">
+                    <div class="formLabel">Hauptnummer</div>
+                    <div class="formInput"><input type="text" id="fixnet" name="fixnet" placeholder="optional"></div>
+                </div>
+                <div class="formItem">
+                    <div class="formLabel">Fax</div>
+                    <div class="formInput"><input type="text" id="fax" name="fax" placeholder="optional"></div>
+                </div>
+                <div class="formItem">
+                    <div class="formLabel">Mail 1</div>
+                    <div class="formInput"><input type="text" id="mail1" name="mail1" ></div>
+                </div>
+                <div class="formItem">
+                    <div class="formLabel">Mail 2</div>
+                    <div class="formInput"><input type="text" id="mail2" name="mail2" placeholder="optional"></div>
+                </div>
+                <div class="separator">
+                    <svg height="10" width="100%">
+                        <line x1="0" y1="0" x2="800" y2="0" style="stroke:rgb(4,4,4);stroke-width:4px" />
+                    </svg>
+                </div>
+                <div class="formBodyTitle">Adressdaten</div>
+                <div class="formItem">
+                    <div class="formLabel">Firma</div>
+                    <div class="formInput"><input type="text" id="firma" name="firma" ></div>
+                </div>
+                <div class="formItem">
+                    <div class="formLabel">Zusatz Firma</div>
+                    <div class="formInput"><input type="text" id="firmaZusatz" name="firmaZusatz" placeholder="optional"></div>
+                </div>
+                <div class="formItem">
+                    <div class="formLabel">Homepage</div>
+                    <div class="formInput"><input type="text" id="homepage" name="homepage" placeholder="optional"></div>
+                </div>
+                <div class="formItem">
+                    <div class="formLabel">Adresse / Haus Nr</div>
+                    <div class="formInput"><input type="text" id="address1" name="address1" placeholder="Musterstrasse 33"></div>
+                </div>
+                <div class="formItem">
+                    <div class="formLabel">Zusatz Adresse</div>
+                    <div class="formInput"><input type="text" id="address2" name="address2" placeholder="optional"></div>
+                </div>
+                <div class="formItem">
+                    <div class="formLabel">Postfach</div>
+                    <div class="formInput"><input type="text" id="pobox" name="pobox" placeholder="optional"></div>
+                </div>
+                <div class="formItem">
+                    <div class="formLabel">PLZ / Ort</div>
+                    <div class="formInput"><input type="text" id="location" name="location" placeholder="8800 Musterstadt"></div>
+                </div>
+                <div class="formItem">
+                    <div class="formLabel">Kanton / Land</div>
+                    <div class="formInput"><input type="text" id="country" name="country" placeholder="ZH Schweiz"></div>
+                </div>
+            </div>
+            <div class="formFooter">
+                <div class="buttonArea">
+                    <input type="button" value="Speichern" onclick="alert('You clicked on the button to save your page.')">
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
